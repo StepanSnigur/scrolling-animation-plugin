@@ -1,0 +1,24 @@
+.fadeInFromLeft {
+    animation: fadeInFromLeft .5s;
+}
+.fadeInFromRight {
+    animation: fadeInFromRight .5s;
+}
+
+
+@keyframes fadeInFromLeft {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInFromRight {
+    from {
+        transform: translateX(100px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

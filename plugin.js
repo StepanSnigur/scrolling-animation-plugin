@@ -1,13 +1,21 @@
+let isElementVisible = (elem) => {
+    let elementBoundary = elem.getBoundingClientRect();
+ 
+    let topIndent = elementBoundary.top;
+    let bottomIndent = elementBoundary.bottom;
+    let elemHeight = elementBoundary.height;
+ 
+    return ((topIndent + elemHeight >= 0) && (elemHeight + window.innerHeight >= bottomIndent));
+}
+
+
 let scrollingAnimationPlugin = (animationBlocks) => {
     for (let blockToAnimate of animationBlocks) {
-        let topIndent = blockToAnimate.getBoundingClientRect().top;
+        let animationName = blockToAnimate.getAttribute('data-animationClass');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset >= topIndent - window.innerHeight) {
-                blockToAnimate.classList.add('block-animate'); //add class to animate block
+            if (isElementVisible(blockToAnimate)) {
+                blockToAnimate.classList.add(animationName);
             }
         });
     }
 }
-
-let elems = document.querySelectorAll('.block'); //getting all blocks to animate
-scrollingAnimationPlugin(elems);
