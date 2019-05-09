@@ -1,9 +1,8 @@
 let isElementVisible = (elem) => {
-    let elementBoundary = elem.getBoundingClientRect();
- 
-    let topIndent = elementBoundary.top;
-    let bottomIndent = elementBoundary.bottom;
-    let elemHeight = elementBoundary.height;
+    let elementBoundary = elem.getBoundingClientRect(),
+        topIndent = elementBoundary.top,
+        bottomIndent = elementBoundary.bottom,
+        elemHeight = elementBoundary.height;
  
     return ((topIndent + elemHeight >= 0) && (elemHeight + window.innerHeight >= bottomIndent));
 }
