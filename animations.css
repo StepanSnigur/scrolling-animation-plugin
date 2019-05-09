@@ -4,21 +4,36 @@
 .fadeInFromRight {
     animation: fadeInFromRight .5s;
 }
+.fadeIn {
+    animation: fadeIn .5s;
+}
 
 
 @keyframes fadeInFromLeft {
     from {
         transform: translateX(-100px);
+        opacity: 0.1;
     }
     to {
         transform: translateX(0);
+        opacity: 1;
     }
 }
 @keyframes fadeInFromRight {
     from {
         transform: translateX(100px);
+        opacity: 0.1;
     }
     to {
         transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
     }
 }
