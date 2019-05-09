@@ -1,14 +1,3 @@
-.fadeInFromLeft {
-    animation: fadeInFromLeft .5s;
-}
-.fadeInFromRight {
-    animation: fadeInFromRight .5s;
-}
-.fadeIn {
-    animation: fadeIn .5s;
-}
-
-
 @keyframes fadeInFromLeft {
     from {
         transform: translateX(-100px);
@@ -19,6 +8,10 @@
         opacity: 1;
     }
 }
+.fadeInFromLeft {
+    animation: fadeInFromLeft .5s;
+}
+
 @keyframes fadeInFromRight {
     from {
         transform: translateX(100px);
@@ -29,6 +22,10 @@
         opacity: 1;
     }
 }
+.fadeInFromRight {
+    animation: fadeInFromRight .5s;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0.1;
@@ -36,4 +33,93 @@
     to {
         opacity: 1;
     }
+}
+.fadeIn {
+    animation: fadeIn .5s;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 1;
+    }
+}
+.zoomIn {
+    animation: zoomIn .5s;
+}
+
+@keyframes shake {
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+.shake {
+    animation: shake 1s;
+}
+
+@keyframes bell {
+    20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+    40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+    }
+    60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+    80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    }
+    to {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+.bell {
+    animation: bell .5s;
+}
+
+@keyframes rotate {
+    from {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+        animation-timing-function: ease-in;
+    }
+    80% {
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+    to {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+}
+.rotate {
+    animation: rotate .5s;
 }
